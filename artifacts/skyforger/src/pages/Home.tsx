@@ -14,9 +14,12 @@ const fadeUp = {
 };
 
 export default function Home() {
-  const { data: testimonials = [], isLoading } = useListTestimonials({
+  const { data: rawTestimonials, isLoading, error } = useListTestimonials({
     query: { queryKey: getListTestimonialsQueryKey() },
   });
+  
+  // Ensure testimonials is always an array
+  const testimonials = Array.isArray(rawTestimonials) ? rawTestimonials : [];
 
   return (
     <div>
