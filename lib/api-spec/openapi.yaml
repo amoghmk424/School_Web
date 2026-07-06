@@ -1,0 +1,274 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: SkyForger Technologies API
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: admissions
+    description: Student admissions
+  - name: contacts
+    description: Contact form submissions
+  - name: testimonials
+    description: Testimonials
+  - name: dashboard
+    description: Dashboard stats
+
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+
+  /admissions:
+    get:
+      operationId: listAdmissions
+      tags: [admissions]
+      summary: List all admission submissions
+      responses:
+        "200":
+          description: List of admissions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Admission"
+    post:
+      operationId: createAdmission
+      tags: [admissions]
+      summary: Submit an admission inquiry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AdmissionInput"
+      responses:
+        "201":
+          description: Admission created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Admission"
+        "400":
+          description: Validation error
+
+  /contacts:
+    get:
+      operationId: listContacts
+      tags: [contacts]
+      summary: List all contact submissions
+      responses:
+        "200":
+          description: List of contacts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Contact"
+    post:
+      operationId: createContact
+      tags: [contacts]
+      summary: Submit a contact form
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ContactInput"
+      responses:
+        "201":
+          description: Contact created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Contact"
+        "400":
+          description: Validation error
+
+  /testimonials:
+    get:
+      operationId: listTestimonials
+      tags: [testimonials]
+      summary: List all testimonials
+      responses:
+        "200":
+          description: List of testimonials
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Testimonial"
+
+  /dashboard/stats:
+    get:
+      operationId: getDashboardStats
+      tags: [dashboard]
+      summary: Get admin dashboard statistics
+      responses:
+        "200":
+          description: Dashboard stats
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashboardStats"
+
+  /admissions/recent:
+    get:
+      operationId: getRecentAdmissions
+      tags: [admissions]
+      summary: Get the 5 most recent admissions
+      responses:
+        "200":
+          description: Recent admissions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Admission"
+
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+
+    Admission:
+      type: object
+      required: [id, studentName, parentName, phone, email, course, createdAt]
+      properties:
+        id:
+          type: integer
+        studentName:
+          type: string
+        parentName:
+          type: string
+        phone:
+          type: string
+        email:
+          type: string
+        course:
+          type: string
+        message:
+          type: ["string", "null"]
+        status:
+          type: string
+        createdAt:
+          type: string
+
+    AdmissionInput:
+      type: object
+      required: [studentName, parentName, phone, email, course]
+      properties:
+        studentName:
+          type: string
+          minLength: 1
+        parentName:
+          type: string
+          minLength: 1
+        phone:
+          type: string
+          minLength: 1
+        email:
+          type: string
+          minLength: 1
+        course:
+          type: string
+          minLength: 1
+        message:
+          type: string
+
+    Contact:
+      type: object
+      required: [id, name, email, subject, message, createdAt]
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        subject:
+          type: string
+        message:
+          type: string
+        phone:
+          type: ["string", "null"]
+        createdAt:
+          type: string
+
+    ContactInput:
+      type: object
+      required: [name, email, subject, message]
+      properties:
+        name:
+          type: string
+          minLength: 1
+        email:
+          type: string
+          minLength: 1
+        subject:
+          type: string
+          minLength: 1
+        message:
+          type: string
+          minLength: 1
+        phone:
+          type: string
+
+    Testimonial:
+      type: object
+      required: [id, name, role, institution, content, rating]
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        role:
+          type: string
+        institution:
+          type: string
+        content:
+          type: string
+        rating:
+          type: integer
+        avatarUrl:
+          type: ["string", "null"]
+
+    DashboardStats:
+      type: object
+      required: [totalStudents, attendancePercentage, feeCollected, pendingFees, totalAdmissions, thisMonthAdmissions]
+      properties:
+        totalStudents:
+          type: integer
+        attendancePercentage:
+          type: number
+        feeCollected:
+          type: number
+        pendingFees:
+          type: number
+        totalAdmissions:
+          type: integer
+        thisMonthAdmissions:
+          type: integer

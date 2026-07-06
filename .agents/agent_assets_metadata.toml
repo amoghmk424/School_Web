@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "VXrtmr9G1wbeaT2D30PtW"
+uri = "file://artifacts/skyforger/public/images/hero-bg.png"
+type = "image"
+title = "Enterprise software hero dashboard background"
+
+[[generated]]
+id = "k4er8LqiAEtzhF3gunfOr"
+uri = "file://artifacts/skyforger/public/images/demo-school-hero.png"
+type = "image"
+title = "Demo school campus hero"
+
+[[generated]]
+id = "TsMI_M6m9VS2yCAh2r7uB"
+uri = "file://artifacts/skyforger/public/images/demo-library.png"
+type = "image"
+title = "Demo school students library"
+
+[[generated]]
+id = "3otKOrK7njsXwkFq5oeUi"
+uri = "file://artifacts/skyforger/public/images/demo-lab.png"
+type = "image"
+title = "Demo school science lab"

@@ -1,0 +1,161 @@
+Build a modern, responsive, professional School & PU College Website using React, TypeScript, Tailwind CSS, and Framer Motion.
+
+Company Name: SkyForger Technologies
+
+Website Purpose:
+Provide website development and ERP solutions for Schools, PU Colleges, Degree Colleges, and Educational Institutions.
+
+Design Requirements:
+- Premium and modern UI
+- Blue and white educational theme
+- Mobile responsive
+- Smooth animations
+- Professional typography
+- Fast loading
+- SEO optimized
+
+Pages Required:
+
+1. Home Page
+- Hero section with headline:
+  "Transform Your Educational Institution Digitally"
+- Subheading:
+  "Modern Websites, ERP Systems, Student Portals, Fee Management, Attendance, Results & Mobile Apps"
+- CTA Buttons:
+  - Book Free Demo
+  - Contact Us
+
+- Statistics Section
+  - 100% Mobile Responsive
+  - 24/7 Support
+  - Cloud Based
+  - Secure Data
+
+- Features Section
+  - Student Management
+  - Online Admission
+  - Attendance Tracking
+  - Fee Management
+  - Results & Report Cards
+  - Parent Portal
+  - Staff Management
+  - Transport Management
+  - Library Management
+  - Mobile App
+
+2. ERP Solutions Page
+Display modules in attractive cards:
+
+- Student Information System
+- Attendance Management
+- Fee Collection
+- Examination Management
+- Timetable Management
+- Parent Communication
+- HR & Payroll
+- Hostel Management
+- Transport Management
+- Library Management
+
+Each module should have icon, description and benefits.
+
+3. Demo School Website Page
+
+Create a sample school website called:
+
+"Green Valley PU College"
+
+Sections:
+- About Us
+- Principal Message
+- Courses Offered
+- Facilities
+- Faculty
+- Gallery
+- Achievements
+- Contact
+
+Add realistic dummy data and images.
+
+4. Admission Page
+Online admission form with:
+- Student Name
+- Parent Name
+- Phone
+- Email
+- Course
+- Message
+
+Show success popup after submission.
+
+5. Features Comparison Section
+
+Traditional School vs Digital School
+
+Show comparison table highlighting:
+✓ Online Admissions
+✓ Instant Fee Receipts
+✓ Parent Notifications
+✓ Digital Attendance
+✓ Online Results
+✓ Mobile App
+
+6. Testimonials
+
+Display 6 testimonials from principals and administrators.
+
+7. Pricing Page
+
+Starter Website:
+₹15,000
+
+Professional Website:
+₹35,000
+
+Website + ERP:
+₹75,000
+
+Custom Solution:
+Contact Us
+
+8. Contact Page
+
+Company:
+SkyForger Technologies
+
+Include:
+- Contact Form
+- WhatsApp Button
+- Email
+- Location Map
+- Social Media Links
+
+9. Floating Components
+
+- WhatsApp Floating Button
+- Call Now Button
+- Book Demo Button
+
+10. Admin Dashboard Preview
+
+Create a demo dashboard showing:
+- Total Students
+- Attendance Percentage
+- Fee Collection
+- Pending Fees
+- Recent Admissions
+
+Use charts and modern cards.
+
+Technical Requirements:
+- React + TypeScript
+- Tailwind CSS
+- Framer Motion animations
+- Reusable components
+- Dark/Light mode
+- Modern dashboard UI
+- Professional educational illustrations
+- Clean folder structure
+
+Goal:
+The website should be impressive enough that school principals and PU college management feel they need this solution for their institution and immediately want to book a demo.
